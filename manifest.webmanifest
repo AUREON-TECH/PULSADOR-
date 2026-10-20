@@ -1,0 +1,10 @@
+{
+  "name": "PULSADOR — Central Operacional",
+  "short_name": "PULSADOR",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#071021",
+  "theme_color": "#071021",
+  "lang": "pt-BR"
+}
