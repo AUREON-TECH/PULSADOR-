@@ -49,3 +49,5 @@ main section.hidden,main section#dashboard.hidden,main section#performance.hidde
 main section:not(.hidden){display:block}
 #dashboard:not(.hidden){display:flex!important}
 #performance .panel,#quality .panel{margin:12px 0}
+
+#perfGraph{display:block!important}#performance .bi-3charts,#quality .bi-3charts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}#performance .bi-3charts>.panel,#quality .bi-3charts>.panel{min-width:0;padding:14px;margin:0}#performance .bi-3charts h3,#quality .bi-3charts h3{font-size:14px;min-height:34px}@media(max-width:950px){#performance .bi-3charts,#quality .bi-3charts{grid-template-columns:1fr}}
