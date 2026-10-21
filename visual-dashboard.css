@@ -51,3 +51,8 @@ main section:not(.hidden){display:block}
 #performance .panel,#quality .panel{margin:12px 0}
 
 #perfGraph{display:block!important}#performance .bi-3charts,#quality .bi-3charts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}#performance .bi-3charts>.panel,#quality .bi-3charts>.panel{min-width:0;padding:14px;margin:0}#performance .bi-3charts h3,#quality .bi-3charts h3{font-size:14px;min-height:34px}@media(max-width:950px){#performance .bi-3charts,#quality .bi-3charts{grid-template-columns:1fr}}
+/* Exclusive information architecture: executive overview does not duplicate operational modules */
+#dashboard>.bi-wrap:not(#monthlyReal),#dashboard>.panel,#dashboard>.grid{display:none!important}
+#dashboard #monthlyReal .monthly-details,#dashboard #monthlyReal .monthly-quality-panel{display:none!important}
+#dashboard #monthlyReal{max-height:calc(100vh - 215px);overflow:auto}
+#performance:not(.hidden),#quality:not(.hidden),#staff:not(.hidden),#entry:not(.hidden),#finance:not(.hidden),#backup:not(.hidden){min-height:65vh}
