@@ -43,3 +43,9 @@ body>main:last-of-type{max-width:1250px!important;padding-top:0!important}
 button:focus-visible,summary:focus-visible{outline:2px solid #ffc085;outline-offset:2px}
 @media(min-width:1050px){body>main:last-of-type{max-width:min(94vw,1520px)!important}nav{max-width:min(94vw,1520px)!important}.bi-kpis{grid-template-columns:repeat(4,minmax(0,1fr))}#dashboard .bi-wrap:not(#monthlyReal){padding:17px 22px!important}}
 @media(max-width:650px){header{padding:14px 18px!important}header .brand strong{font-size:24px}header>.muted{display:none}body>main:first-of-type h1{font-size:24px}nav{margin:8px 12px!important;border-radius:13px!important}nav button{padding:10px 12px!important}.bi-wrap{padding:14px!important}.bi-stat{padding:12px!important}.bi-chartscroll svg{min-width:620px}}
+
+/* Correct tab isolation: legacy #dashboard display:flex previously overrode .hidden */
+main section.hidden,main section#dashboard.hidden,main section#performance.hidden,main section#quality.hidden,main section#staff.hidden,main section#entry.hidden,main section#finance.hidden,main section#backup.hidden{display:none!important}
+main section:not(.hidden){display:block}
+#dashboard:not(.hidden){display:flex!important}
+#performance .panel,#quality .panel{margin:12px 0}
