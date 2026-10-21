@@ -1,0 +1,19 @@
+(function(){
+const el=id=>document.getElementById(id),money=n=>(Number(n)||0).toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
+const months=Array.from({length:10},(_,i)=>'2026-'+String(i+1).padStart(2,'0')),labels=['JAN','FEV','MAR','ABR','MAI','JUN','JUL','AGO','SET','OUT'];
+let mode='admissoes';
+function dataset(){return months.map(m=>{if(mode==='admissoes')return people.filter(p=>p.start.startsWith(m)).length;let matches=Object.entries(records).filter(([key])=>key.startsWith(m+'|'));if(!matches.length)return null;return matches.reduce((sum,[,r])=>sum+(Number(r[mode])||0),0)})}
+function chart(){let data=dataset(),max=Math.max(1,...data.filter(v=>v!==null)),W=1000,H=320,L=50,R=20,B=50,T=35,dx=(W-L-R)/10;
+let bars=data.map((n,i)=>{let x=L+i*dx+10,w=dx-17,h=n===null?4:(H-B-T)*n/max,y=H-B-h;return '<g><title>'+labels[i]+': '+(n===null?'sem lançamento':n)+'</title><rect x="'+x+'" y="'+y+'" width="'+w+'" height="'+h+'" rx="7" fill="'+(n===null?'#354862':i<3?'#4e7da8':i===3?'#b9a468':'#48d4e5')+'"/><text x="'+(x+w/2)+'" y="'+(H-20)+'" text-anchor="middle" fill="#a8c9e4" font-size="14">'+labels[i]+'</text><text x="'+(x+w/2)+'" y="'+Math.max(20,y-8)+'" text-anchor="middle" fill="#fff" font-size="13">'+(n===null?'—':n.toLocaleString('pt-BR'))+'</text></g>'}).join('');
+let marker=L+3*dx+10+dx*19/30;
+el('biChart').innerHTML='<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="Evolução mensal da operação" style="width:100%;min-width:620px"><rect x="'+marker+'" y="'+T+'" width="'+(W-marker-R)+'" height="'+(H-B-T)+'" fill="#3bd9ed" opacity=".05"/><line x1="'+marker+'" x2="'+marker+'" y1="12" y2="'+(H-B)+'" stroke="#ffd47e" stroke-width="2" stroke-dasharray="6 5"/><text x="'+(marker+8)+'" y="22" fill="#ffdf97" font-size="13">19/04 • início da liderança</text>'+bars+'</svg>';
+el('biDetail').textContent=mode==='admissoes'?'Admissões confirmadas pelo cadastro; não representam o efetivo mensal nem os casais produzidos.':'Valores obtidos dos lançamentos salvos neste navegador. Traços indicam meses sem dados, não resultado zero.';
+}
+function heat(){let peopleActive=people.filter(p=>p.status==='ATIVO');el('biHeat').innerHTML=peopleActive.map((p,i)=>{let [couples,cost]=historic[i],rate=couples?cost/couples:0,alpha=Math.min(.9,Math.max(.2,rate/350));return '<div title="'+p.name+' • '+couples+' casais • '+money(rate)+'/casal" style="border:1px solid #316581;background:rgba(25,196,216,'+alpha+');padding:11px;border-radius:10px"><small>'+p.name.split(' ').slice(0,2).join(' ')+'</small><b style="display:block;font-size:19px">'+money(rate)+'</b><small>brinde/casal</small></div>'}).join('')}
+function init(){if(!el('biChart'))return;const total=historic.reduce((s,r)=>s+r[0],0),cost=historic.reduce((s,r)=>s+r[1],0),hiredBefore=people.filter(p=>p.start<'2026-04-19').length;
+el('biKpis').innerHTML=[['Casais históricos',total.toLocaleString('pt-BR')],['Brindes históricos',money(cost)],['Brindes por casal',money(cost/total)],['Admissões antes / depois',hiredBefore+' / '+(people.length-hiredBefore)]].map(([a,b])=>'<div class="bi-stat"><small>'+a+'</small><strong>'+b+'</strong></div>').join('');
+el('biDonuts').innerHTML=[['26','Ativos cadastrados',100],['43','Inativos históricos',100],['19/04','Liderança desde 2026',64]].map(([n,t,v])=>'<div class="bi-donut-item"><div class="bi-donut" style="--angle:'+(v*3.6)+'deg"><span>'+n+'</span></div><small>'+t+'</small></div>').join('');
+document.querySelectorAll('[data-bi-metric]').forEach(b=>b.addEventListener('click',()=>{mode=b.dataset.biMetric;document.querySelectorAll('[data-bi-metric]').forEach(x=>x.classList.toggle('selected',x===b));chart()}));chart();heat()
+}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
