@@ -1,0 +1,78 @@
+{
+  "source": "Document.csv, Data de atendimento + Promotor de marketing (nomes com espaços normalizados)",
+  "period": "2026-01 a 2026-10",
+  "leadership": "2026-04-19",
+  "note": "captadores representa promotores distintos com ao menos um atendimento registrado no mês; não representa efetivo total de contratados ativos. Outubro parcial.",
+  "months": [
+    {
+      "id": "2026-01",
+      "month": "Jan",
+      "couples": 402,
+      "workers": 14,
+      "average": 28.71
+    },
+    {
+      "id": "2026-02",
+      "month": "Fev",
+      "couples": 275,
+      "workers": 17,
+      "average": 16.18
+    },
+    {
+      "id": "2026-03",
+      "month": "Mar",
+      "couples": 349,
+      "workers": 19,
+      "average": 18.37
+    },
+    {
+      "id": "2026-04",
+      "month": "Abr",
+      "couples": 411,
+      "workers": 22,
+      "average": 18.68
+    },
+    {
+      "id": "2026-05",
+      "month": "Mai",
+      "couples": 438,
+      "workers": 25,
+      "average": 17.52
+    },
+    {
+      "id": "2026-06",
+      "month": "Jun",
+      "couples": 488,
+      "workers": 28,
+      "average": 17.43
+    },
+    {
+      "id": "2026-07",
+      "month": "Jul",
+      "couples": 734,
+      "workers": 26,
+      "average": 28.23
+    },
+    {
+      "id": "2026-08",
+      "month": "Ago",
+      "couples": 395,
+      "workers": 23,
+      "average": 17.17
+    },
+    {
+      "id": "2026-09",
+      "month": "Set",
+      "couples": 455,
+      "workers": 23,
+      "average": 19.78
+    },
+    {
+      "id": "2026-10",
+      "month": "Out*",
+      "couples": 313,
+      "workers": 25,
+      "average": 12.52
+    }
+  ]
+}
