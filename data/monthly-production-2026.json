@@ -1,78 +1,143 @@
 {
-  "source": "Document.csv, Data de atendimento + Promotor de marketing (nomes com espaços normalizados)",
-  "period": "2026-01 a 2026-10",
+  "source": "Document.csv; Data de atendimento, Promotor de marketing, Renda, Qualificação",
   "leadership": "2026-04-19",
-  "note": "captadores representa promotores distintos com ao menos um atendimento registrado no mês; não representa efetivo total de contratados ativos. Outubro parcial.",
+  "notes": [
+    "Renda é o campo Renda declarado para o atendimento/casal, não renda individual dos dois separadamente.",
+    "Renda média ignora registros sem renda válida ou com renda zero.",
+    "Qualificados = Qualificação Q, Não qualificados = NQ, sem classificação separado.",
+    "Captores com atendimento são nomes distintos por mês; não equivalem a quadro RH.",
+    "Outubro parcial."
+  ],
   "months": [
     {
       "id": "2026-01",
       "month": "Jan",
       "couples": 402,
       "workers": 14,
-      "average": 28.71
+      "average": 28.71,
+      "qualified": 289,
+      "nonQualified": 112,
+      "unclassified": 1,
+      "qualificationRate": 71.89,
+      "averageFamilyIncome": 19169.58,
+      "incomeSample": 401
     },
     {
       "id": "2026-02",
       "month": "Fev",
       "couples": 275,
       "workers": 17,
-      "average": 16.18
+      "average": 16.18,
+      "qualified": 200,
+      "nonQualified": 74,
+      "unclassified": 1,
+      "qualificationRate": 72.73,
+      "averageFamilyIncome": 19545.63,
+      "incomeSample": 274
     },
     {
       "id": "2026-03",
       "month": "Mar",
       "couples": 349,
       "workers": 19,
-      "average": 18.37
+      "average": 18.37,
+      "qualified": 246,
+      "nonQualified": 100,
+      "unclassified": 3,
+      "qualificationRate": 70.49,
+      "averageFamilyIncome": 19751.45,
+      "incomeSample": 346
     },
     {
       "id": "2026-04",
       "month": "Abr",
       "couples": 411,
       "workers": 22,
-      "average": 18.68
+      "average": 18.68,
+      "qualified": 303,
+      "nonQualified": 107,
+      "unclassified": 1,
+      "qualificationRate": 73.72,
+      "averageFamilyIncome": 20526.34,
+      "incomeSample": 410
     },
     {
       "id": "2026-05",
       "month": "Mai",
       "couples": 438,
       "workers": 25,
-      "average": 17.52
+      "average": 17.52,
+      "qualified": 285,
+      "nonQualified": 148,
+      "unclassified": 5,
+      "qualificationRate": 65.07,
+      "averageFamilyIncome": 20078.1,
+      "incomeSample": 434
     },
     {
       "id": "2026-06",
       "month": "Jun",
       "couples": 488,
       "workers": 28,
-      "average": 17.43
+      "average": 17.43,
+      "qualified": 331,
+      "nonQualified": 154,
+      "unclassified": 3,
+      "qualificationRate": 67.83,
+      "averageFamilyIncome": 20954.85,
+      "incomeSample": 485
     },
     {
       "id": "2026-07",
       "month": "Jul",
       "couples": 734,
       "workers": 26,
-      "average": 28.23
+      "average": 28.23,
+      "qualified": 543,
+      "nonQualified": 188,
+      "unclassified": 3,
+      "qualificationRate": 73.98,
+      "averageFamilyIncome": 21609.58,
+      "incomeSample": 731
     },
     {
       "id": "2026-08",
       "month": "Ago",
       "couples": 395,
       "workers": 23,
-      "average": 17.17
+      "average": 17.17,
+      "qualified": 271,
+      "nonQualified": 124,
+      "unclassified": 0,
+      "qualificationRate": 68.61,
+      "averageFamilyIncome": 20110.13,
+      "incomeSample": 395
     },
     {
       "id": "2026-09",
       "month": "Set",
       "couples": 455,
       "workers": 23,
-      "average": 19.78
+      "average": 19.78,
+      "qualified": 300,
+      "nonQualified": 152,
+      "unclassified": 3,
+      "qualificationRate": 65.93,
+      "averageFamilyIncome": 19289.18,
+      "incomeSample": 453
     },
     {
       "id": "2026-10",
       "month": "Out*",
       "couples": 313,
       "workers": 25,
-      "average": 12.52
+      "average": 12.52,
+      "qualified": 211,
+      "nonQualified": 100,
+      "unclassified": 2,
+      "qualificationRate": 67.41,
+      "averageFamilyIncome": 20577.81,
+      "incomeSample": 311
     }
   ]
 }
