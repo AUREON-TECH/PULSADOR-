@@ -1,12 +1,13 @@
 {
-  "source": "Document.csv; Data de atendimento, Promotor de marketing, Renda, Qualificação",
+  "source": "Document.csv (jan-set) e Document(1).csv (outubro ate 22/10/2026)",
   "leadership": "2026-04-19",
   "notes": [
     "Renda é o campo Renda declarado para o atendimento/casal, não renda individual dos dois separadamente.",
     "Renda média ignora registros sem renda válida ou com renda zero.",
     "Qualificados = Qualificação Q, Não qualificados = NQ, sem classificação separado.",
     "Captores com atendimento são nomes distintos por mês; não equivalem a quadro RH.",
-    "Outubro parcial."
+    "Outubro parcial.",
+    "Outubro: dados agregados informados na ultima auditoria; VGV bruto nao e receita liquida."
   ],
   "months": [
     {
@@ -129,15 +130,18 @@
     {
       "id": "2026-10",
       "month": "Out*",
-      "couples": 313,
+      "couples": 328,
       "workers": 25,
-      "average": 12.52,
-      "qualified": 211,
-      "nonQualified": 100,
+      "average": 13.12,
+      "qualified": 222,
+      "nonQualified": 104,
       "unclassified": 2,
-      "qualificationRate": 67.41,
-      "averageFamilyIncome": 20577.81,
-      "incomeSample": 311
+      "qualificationRate": 67.68,
+      "averageFamilyIncome": 20502.15,
+      "incomeSample": 326,
+      "periodEnd": "2026-10-22",
+      "vgvBruto": 5808534,
+      "cancelledReported": 77200
     }
   ]
 }
