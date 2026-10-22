@@ -1,6 +1,6 @@
 {
   "source": "Document.csv (jan-set) e Document(1).csv (outubro ate 22/10/2026)",
-  "leadership": "2026-04-19",
+  "leadership": "2026-03-19",
   "notes": [
     "Renda é o campo Renda declarado para o atendimento/casal, não renda individual dos dois separadamente.",
     "Renda média ignora registros sem renda válida ou com renda zero.",
