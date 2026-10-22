@@ -56,3 +56,23 @@ main section:not(.hidden){display:block}
 #dashboard #monthlyReal .monthly-details,#dashboard #monthlyReal .monthly-quality-panel{display:none!important}
 #dashboard #monthlyReal{max-height:calc(100vh - 215px);overflow:auto}
 #performance:not(.hidden),#quality:not(.hidden),#staff:not(.hidden),#entry:not(.hidden),#finance:not(.hidden),#backup:not(.hidden){min-height:65vh}
+
+/* Command center v4: one coherent desktop viewport per operational module */
+html,body{height:100%}body>main:first-of-type{max-width:1480px!important}body>main:last-of-type{max-width:1480px!important;width:calc(100% - 24px);padding:0 8px 20px!important}
+nav{max-width:1480px!important}
+main section:not(.hidden){min-height:0!important}
+#dashboard:not(.hidden){display:block!important}
+#dashboard #monthlyReal{max-height:calc(100vh - 238px)!important;min-height:420px;overflow-y:auto;scrollbar-width:thin}
+#dashboard>.bi-wrap:not(#monthlyReal),#dashboard>.grid,#dashboard>.panel{display:none!important}
+#dashboard #monthlyReal .bi-chartscroll{max-height:390px}
+#performance:not(.hidden),#quality:not(.hidden){max-height:calc(100vh - 220px);overflow:auto;scrollbar-width:thin}
+#performance .bi-wrap,#quality .bi-wrap{padding:19px!important}
+#performance .bi-3charts,#quality .bi-3charts{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:13px}
+#performance .bi-3charts .panel,#quality .bi-3charts .panel{background:linear-gradient(145deg,#1b2938,#111a25)!important;border:1px solid #395064!important;border-radius:16px!important}
+#performance .bi-3charts .panel:nth-child(1),#quality .bi-3charts .panel:nth-child(1){border-top:3px solid #ff9d58!important}
+#performance .bi-3charts .panel:nth-child(2),#quality .bi-3charts .panel:nth-child(2){border-top:3px solid #5be0d2!important}
+#performance .bi-3charts .panel:nth-child(3),#quality .bi-3charts .panel:nth-child(3){border-top:3px solid #a4a0fb!important}
+#finance:not(.hidden),#staff:not(.hidden),#entry:not(.hidden),#backup:not(.hidden){max-height:calc(100vh - 220px);overflow:auto;scrollbar-width:thin}
+#staff table th,#staff table td{white-space:nowrap}#staff .scroll{max-height:calc(100vh - 390px);overflow:auto}
+#finance .bi-wrap{margin-bottom:14px}
+@media(max-width:1000px){#performance .bi-3charts,#quality .bi-3charts{grid-template-columns:1fr!important}#performance:not(.hidden),#quality:not(.hidden),#finance:not(.hidden),#staff:not(.hidden){max-height:none;overflow:visible}}
