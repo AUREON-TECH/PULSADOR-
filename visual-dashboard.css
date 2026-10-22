@@ -76,3 +76,6 @@ main section:not(.hidden){min-height:0!important}
 #staff table th,#staff table td{white-space:nowrap}#staff .scroll{max-height:calc(100vh - 390px);overflow:auto}
 #finance .bi-wrap{margin-bottom:14px}
 @media(max-width:1000px){#performance .bi-3charts,#quality .bi-3charts{grid-template-columns:1fr!important}#performance:not(.hidden),#quality:not(.hidden),#finance:not(.hidden),#staff:not(.hidden){max-height:none;overflow:visible}}
+
+/* Compact VGV details in one column */
+#staff td.vgv-cell{min-width:200px;white-space:normal;line-height:1.45}#staff td.vgv-cell strong{display:block;font-size:16px;color:#f6b36c}#staff td.vgv-cell small{display:block;color:#9aabbc;font-size:10px;text-transform:uppercase;letter-spacing:.05em}#staff td.vgv-cell span{display:block;color:#c4d4e4;font-size:12px;margin-top:3px}#staff td.vgv-cell span:last-child{color:#75dfd2}
